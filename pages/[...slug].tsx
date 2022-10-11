@@ -4,6 +4,7 @@ import * as React from 'react';
 import { GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import { DrupalNode, DrupalTaxonomyTerm } from 'next-drupal';
 import { DrupalJsonApiParams } from 'drupal-jsonapi-params';
+import { resolveWebformContent, WebformObject } from 'nextjs-drupal-webform';
 
 import { getMenus } from '../lib/get-menus';
 import { Layout, LayoutProps } from '../components/layout';
@@ -20,7 +21,7 @@ import { TaxonomyPlace } from '../components/taxonomy/taxonomy--place_type';
 import { getPrioritizedStaticPathsFromContext } from '../lib/get-prioritized-static-paths';
 import { GetStaticPathsContext } from 'next/types';
 
-// List of all the entity types handled by this route.
+// List of all the entity types handle`d by this route.
 export const ENTITY_TYPES = [
   'node--page',
   'node--article',
@@ -37,6 +38,7 @@ interface EntityPageProps extends LayoutProps {
   entity: DrupalNode | DrupalTaxonomyTerm;
   additionalContent?: {
     nodes?: DrupalNode[];
+    webform?: WebformObject;
   };
 }
 
@@ -48,7 +50,10 @@ export default function EntityPage({
   return (
     <Layout title={entity.title || entity.name} menus={menus}>
       {entity.type === 'node--page' && (
-        <NodeBasicPage node={entity as DrupalNode} />
+        <NodeBasicPage
+          node={entity as DrupalNode}
+          additionalContent={additionalContent as { webform: WebformObject }}
+        />
       )}
       {entity.type === 'node--article' && (
         <NodeArticle node={entity as DrupalNode} />
@@ -192,6 +197,14 @@ export async function getStaticProps(
     return {
       notFound: true,
     };
+  }
+
+  // Check if the entity has webform(s) and create a webform object.
+  if (entity.field_form) {
+    additionalContent['webform'] = await resolveWebformContent(
+      entity.field_form.resourceIdObjMeta.drupal_internal__target_id,
+      drupal,
+    );
   }
 
   // Fetch additional content for rendering taxonomy term pages.
