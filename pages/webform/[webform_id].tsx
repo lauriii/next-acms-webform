@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { resolveWebformContent, Webform } from 'nextjs-drupal-webform';
-import { drupal } from "../../lib/drupal";
-import {GetStaticPathsContext} from "next/types";
-import {GetStaticPathsResult} from "next";
-import { Layout } from "../../components/layout";
-import { getMenus } from "../../lib/get-menus";
-import { PageHeader } from "../../components/page-header";
+import { drupal } from '../../lib/drupal';
+import { GetStaticPathsContext } from 'next/types';
+import { GetStaticPathsResult } from 'next';
+import { Layout } from '../../components/layout';
+import { getMenus } from '../../lib/get-menus';
+import { PageHeader } from '../../components/page-header';
 
 export default function WebformSlug({ menus, webform, id }) {
   return (
