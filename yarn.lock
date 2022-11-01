@@ -1889,12 +1889,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-acms@^1.0.0-beta1, next-acms@^1.0.0-beta2:
+next-acms@^1.0.0-beta2:
   version "1.0.0-beta2"
   resolved "https://registry.yarnpkg.com/next-acms/-/next-acms-1.0.0-beta2.tgz#2cced7ff9e8d557c0f7ea620d72c98878533029b"
   integrity sha512-WV1boHjcidhUtXNZa4lTFDPnU7ngkfe5B+pWk6v7waarVWSgNrfR/jFvpgaaoznP8YCJTgwVQksdhSAYGBG4cQ==
 
-next-drupal@^1.1.1, next-drupal@^1.5.0:
+next-drupal@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/next-drupal/-/next-drupal-1.5.0.tgz#bf95e378d0d3c9b9d6b37ec6736dc66363beaef3"
   integrity sha512-hqzXvmB/cw0Pisu7SsmPWTG/hvbJnz7wKs7aX5J0+anamN6I+pkBu9LsQzUJshzpZB/VlEJQQQoVwKkXny689w==
@@ -1932,17 +1932,10 @@ next@^12.0.0, next@^12.2.0:
     "@next/swc-win32-ia32-msvc" "12.3.1"
     "@next/swc-win32-x64-msvc" "12.3.1"
 
-nextjs-drupal-webform@../next_webform:
-  version "1.0.0"
-  dependencies:
-    "@tailwindcss/typography" "^0.5.0"
-    classnames "^2.3.1"
-    drupal-jsonapi-params "^2.1.0"
-    html-react-parser "^1.4.8"
-    next "^12.2.0"
-    next-acms "^1.0.0-beta1"
-    next-drupal "^1.1.1"
-    sharp "^0.30.2"
+nextjs-drupal-webform@^1.0.0-alpha1:
+  version "1.0.0-alpha1"
+  resolved "https://registry.yarnpkg.com/nextjs-drupal-webform/-/nextjs-drupal-webform-1.0.0-alpha1.tgz#f4106207907c7a001ed8367edebc4c80218dc949"
+  integrity sha512-2eyXvp5mavu9QFSmLwWttSuYEon5CcPn3fIxUelVwicgo00OrKZ/9kaCKuEDNeWfYY8HrSQGtal4ANiJ5U908g==
 
 node-abi@^3.3.0:
   version "3.25.0"
