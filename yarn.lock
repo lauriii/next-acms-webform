@@ -393,6 +393,13 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tailwindcss/forms@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.3.tgz#e4d7989686cbcaf416c53f1523df5225332a86e7"
+  integrity sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
+
 "@tailwindcss/typography@^0.5.0":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.5.7.tgz#e0b95bea787ee14c5a34a74fc824e6fe86ea8855"
@@ -740,7 +747,7 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
   integrity sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==
 
-classnames@^2.3.1:
+classnames@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
@@ -1842,6 +1849,11 @@ mimic-response@^3.1.0:
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-3.1.0.tgz#2d1d59af9c1b129815accc2c46a022a5ce1fa3c9"
   integrity sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==
 
+mini-svg-data-uri@^1.2.3:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
+  integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
+
 minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
@@ -1889,12 +1901,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next-acms@^1.0.0-beta1, next-acms@^1.0.0-beta2:
+next-acms@^1.0.0-beta2:
   version "1.0.0-beta2"
   resolved "https://registry.yarnpkg.com/next-acms/-/next-acms-1.0.0-beta2.tgz#2cced7ff9e8d557c0f7ea620d72c98878533029b"
   integrity sha512-WV1boHjcidhUtXNZa4lTFDPnU7ngkfe5B+pWk6v7waarVWSgNrfR/jFvpgaaoznP8YCJTgwVQksdhSAYGBG4cQ==
 
-next-drupal@^1.1.1, next-drupal@^1.5.0:
+next-drupal@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/next-drupal/-/next-drupal-1.5.0.tgz#bf95e378d0d3c9b9d6b37ec6736dc66363beaef3"
   integrity sha512-hqzXvmB/cw0Pisu7SsmPWTG/hvbJnz7wKs7aX5J0+anamN6I+pkBu9LsQzUJshzpZB/VlEJQQQoVwKkXny689w==
@@ -1933,16 +1945,9 @@ next@^12.0.0, next@^12.2.0:
     "@next/swc-win32-x64-msvc" "12.3.1"
 
 nextjs-drupal-webform@../next_webform:
-  version "1.0.0"
+  version "1.0.0-alpha1"
   dependencies:
-    "@tailwindcss/typography" "^0.5.0"
-    classnames "^2.3.1"
-    drupal-jsonapi-params "^2.1.0"
-    html-react-parser "^1.4.8"
-    next "^12.2.0"
-    next-acms "^1.0.0-beta1"
-    next-drupal "^1.1.1"
-    sharp "^0.30.2"
+    classnames "^2.3.2"
 
 node-abi@^3.3.0:
   version "3.25.0"
