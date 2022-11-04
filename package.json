@@ -16,12 +16,15 @@
     "classnames": "^2.3.2",
     "drupal-jsonapi-params": "^2.1.0",
     "html-react-parser": "^1.4.8",
+    "i18next": "^22.0.4",
     "next": "^12.2.0",
     "next-acms": "^1.0.0-beta2",
     "next-drupal": "^1.5.0",
+    "next-i18next": "^12.1.0",
     "nextjs-drupal-webform": "../next_webform",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^12.0.0",
     "sharp": "^0.30.2"
   },
   "devDependencies": {
