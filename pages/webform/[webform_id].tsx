@@ -16,7 +16,6 @@ import classNames from "classnames";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation, Trans} from 'next-i18next'
 import {useRouter} from "next/router";
-import Link from 'next/link'
 
 const labelProps = {
   className: classNames(['block', 'text-gray-700', 'text-sm', 'font-bold', 'mb-2']),
@@ -29,21 +28,11 @@ const wrapperProps = {
 };
 export default function WebformSlug({menus, webform, id}) {
   const router = useRouter();
-  const {t} = useTranslation('common');
-  const changeTo = router.locale === 'en' ? 'de' : 'en'
-
+  const {t, i18n} = useTranslation('common');
+  console.log('i18n', i18n);
   return (
     <Layout title={webform.title} menus={menus}>
-      {/*<PageHeader heading={webform.title}/>*/}
-      <PageHeader heading={t('title')}/>
-      <Link
-        href='/webform/default_test_form'
-        locale={changeTo}
-      >
-        <button>
-          {t('change-locale', {changeTo})}
-        </button>
-      </Link>
+      <PageHeader heading={webform.title}/>
       <div className="container px-6 pb-10 mx-auto">
         <Webform id={id} data={webform} customComponents={{
           textfield: withCustomStyles(components.textfield, fieldProps, labelProps, wrapperProps),
@@ -54,11 +43,14 @@ export default function WebformSlug({menus, webform, id}) {
         }}
                  uiStrings={{
                    ...defaultUiStrings,
-                   foo: (() => {
-                     return 'Hello from France {0} {1}' + Math.random();
-                   })(),
+                   errorMessage: t('on-submit-error'),
+                   successMessage: t('on-submit-success'),
+                   addButtonText: t('multi-value-add'),
+                   removeButtonText: t('multi-value-remove'),
+                   emailConfirmError: t('email-confirm-error'),
+                   tableRowError: t('table-row-error', {row: defaultUiStrings['webformVars']['row']}),
+                   foo: t('current-locale', {current: router.locale}),
                  }}
-                 translate={t}
         />
       </div>
     </Layout>
@@ -69,11 +61,17 @@ export async function getStaticPaths(
   context: GetStaticPathsContext,
 ): Promise<GetStaticPathsResult> {
   const entities = await drupal.getResourceCollectionFromContext('webform--webform', context);
-  const paths = entities.map((entity) => {
-    return {params: {webform_id: entity.drupal_internal__id}}
+  entities.map((ent) => console.log(ent.title));
+
+  const pathsDE = entities.map((entity) => {
+    return {params: {webform_id: entity.drupal_internal__id}, locale: 'de'}
+  });
+
+  const pathsEN = entities.map((entity) => {
+    return {params: {webform_id: entity.drupal_internal__id}, locale: 'en'}
   });
   return {
-    paths: [...paths],
+    paths: [...pathsDE, ...pathsEN],
     fallback: false,
   };
 }
@@ -90,7 +88,7 @@ export async function getStaticProps(context) {
       webform,
       id: context.params.webform_id,
       menus: await getMenus(),
-      ...(await serverSideTranslations('locale', ['common', 'footer'], null, ['en', 'de'])),
+      ...(await serverSideTranslations(context.locale, ['common', 'footer'], null)),
     },
     revalidate: 1,
   };

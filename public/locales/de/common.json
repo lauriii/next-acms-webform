@@ -17,5 +17,11 @@
       "link": "https://locize.com/blog/next-i18n-statisch/"
     }
   },
-  "autocomplete": "German translation of autocomplete"
+  "on-submit-error": "Es ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+  "on-submit-success": "Ihre Einreichung wurde gesendet. Vielen Dank.",
+  "multi-value-add": "Hinzufügen",
+  "multi-value-remove": "Entfernen",
+  "email-confirm-error": "Die E-Mail-Adressen stimmen nicht überein.",
+  "table-row-error": "Das Formularelement \"{{row}}\" befindet sich nicht innerhalb einer Tabellenzeile. Um das Formularelement wiederzugeben, muss es in einer Tabellenzeile platziert werden.",
+  "current-locale": "Aktuelles Gebietsschema ist \"{{current}}\""
 }

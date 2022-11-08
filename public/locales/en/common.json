@@ -17,5 +17,11 @@
       "link": "https://locize.com/blog/next-i18n-static/"
     }
   },
-  "autocomplete": "English translation of autocomplete"
+  "on-submit-error": "An error occurred, Please try again.",
+  "on-submit-success": "Your submission has been sent. Thank you.",
+  "multi-value-add": "Add more",
+  "multi-value-remove": "Remove",
+  "email-confirm-error": "The specified email addresses do not match.",
+  "table-row-error": "The form element \"{{row}}\" is not inside a table row. To render the form element, it must be placed inside a table row.",
+  "current-locale": "Current locale is \"{{current}}\""
 }

@@ -7,8 +7,5 @@ module.exports = {
   experimental: {
     externalDir: true,
   },
-  i18n: {
-    locales: ['en', 'de'],
-    defaultLocale: 'de',
-  },
+  i18n,
 };
