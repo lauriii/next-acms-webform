@@ -14,7 +14,7 @@ import {PageHeader} from '../../components/page-header';
 import withCustomStyles from "../../components/webform/withCustomStyles";
 import classNames from "classnames";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation, Trans} from 'next-i18next'
+import {useTranslation} from 'next-i18next'
 import {useRouter} from "next/router";
 
 const labelProps = {
@@ -27,9 +27,7 @@ const wrapperProps = {
   className: classNames(['space-y-3']),
 };
 export default function WebformSlug({menus, webform, id}) {
-  const router = useRouter();
-  const {t, i18n} = useTranslation('common');
-  console.log('i18n', i18n);
+  const {t} = useTranslation('common');
   return (
     <Layout title={webform.title} menus={menus}>
       <PageHeader heading={webform.title}/>
@@ -48,8 +46,7 @@ export default function WebformSlug({menus, webform, id}) {
                    addButtonText: t('multi-value-add'),
                    removeButtonText: t('multi-value-remove'),
                    emailConfirmError: t('email-confirm-error'),
-                   tableRowError: t('table-row-error', {row: defaultUiStrings['webformVars']['row']}),
-                   foo: t('current-locale', {current: router.locale}),
+                   tableRowError: t('table-row-error'),
                  }}
         />
       </div>

@@ -1,27 +1,9 @@
 {
-  "h1": "Ein einfaches Beispiel",
-  "change-locale": "Sprache wechseln zu \"{{changeTo}}\"",
-  "to-second-page": "Zur zweiten Seite",
-  "error-with-status": "Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten",
-  "error-without-status": "Auf dem Server ist ein Fehler aufgetreten",
   "title": "Hauptseite | next-i18next",
-  "blog": {
-    "optimized": {
-      "question": "Möchtest du einige Superkräfte entfesseln, um für alle Seiten optimierte Übersetzungen zu haben?",
-      "answer": "Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.",
-      "link": "https://locize.com/blog/next-i18next-de/"
-    },
-    "ssg": {
-      "question": "Möchtest du SSG (next export) verwenden?",
-      "answer": "Dann schaue dir vielleicht <1>diesen Blogbeitrag</1> an.",
-      "link": "https://locize.com/blog/next-i18n-statisch/"
-    }
-  },
   "on-submit-error": "Es ist ein Fehler aufgetreten. Bitte versuche es erneut.",
   "on-submit-success": "Ihre Einreichung wurde gesendet. Vielen Dank.",
   "multi-value-add": "Hinzufügen",
   "multi-value-remove": "Entfernen",
   "email-confirm-error": "Die E-Mail-Adressen stimmen nicht überein.",
-  "table-row-error": "Das Formularelement \"{{row}}\" befindet sich nicht innerhalb einer Tabellenzeile. Um das Formularelement wiederzugeben, muss es in einer Tabellenzeile platziert werden.",
-  "current-locale": "Aktuelles Gebietsschema ist \"{{current}}\""
+  "table-row-error": "Das Formularelement {0} befindet sich nicht innerhalb einer Tabellenzeile. Um das Formularelement wiederzugeben, muss es in einer Tabellenzeile platziert werden."
 }

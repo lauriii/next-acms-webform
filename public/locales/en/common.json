@@ -1,27 +1,9 @@
 {
-  "h1": "A simple example",
-  "change-locale": "Change locale to \"{{changeTo}}\"",
-  "to-second-page": "To second page",
-  "error-with-status": "A {{statusCode}} error occurred on server",
-  "error-without-status": "An error occurred on the server",
   "title": "Home | next-i18next",
-  "blog": {
-    "optimized": {
-      "question": "Do you like to unleash some super powers to have all side optimized translations?",
-      "answer": "Then you may have a look at <1>this blog post</1>.",
-      "link": "https://locize.com/blog/next-i18next/"
-    },
-    "ssg": {
-      "question": "Do you want to use SSG (next export)?",
-      "answer": "Then you may have a look at <1>this blog post</1>.",
-      "link": "https://locize.com/blog/next-i18n-static/"
-    }
-  },
-  "on-submit-error": "An error occurred, Please try again.",
+  "on-submit-error": "An error occurred. Please try again.",
   "on-submit-success": "Your submission has been sent. Thank you.",
   "multi-value-add": "Add more",
   "multi-value-remove": "Remove",
   "email-confirm-error": "The specified email addresses do not match.",
-  "table-row-error": "The form element \"{{row}}\" is not inside a table row. To render the form element, it must be placed inside a table row.",
-  "current-locale": "Current locale is \"{{current}}\""
+  "table-row-error": "The form element {0} is not inside a table row. To render the form element, it must be placed inside a table row."
 }
