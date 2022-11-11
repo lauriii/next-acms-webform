@@ -3,9 +3,18 @@ const withCustomStyles = (EnhancedComponent, fieldProps = {}, labelProps = {}, w
     return (
       <EnhancedComponent
         {...props}
-        labelProps={labelProps}
-        fieldProps={fieldProps}
-        wrapperProps={wrapperProps}
+        labelProps={{
+          ...(props.labelProps ?? {}),
+          ...labelProps,
+        }}
+        fieldProps={{
+          ...(props.fieldProps ?? {}),
+          ...fieldProps
+        }}
+        wrapperProps={{
+          ...(props.wrapperProps ?? {}),
+          ...wrapperProps
+        }}
       />
     );
   }
