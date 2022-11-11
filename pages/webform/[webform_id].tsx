@@ -28,8 +28,10 @@ export default function WebformSlug({ menus, webform, id }) {
       <PageHeader heading={webform.title} />
       <div className="container px-6 pb-10 mx-auto">
         <Webform id={id} data={webform} customComponents={{
+          autocomplete: withCustomStyles(components.autocomplete, fieldProps, labelProps, wrapperProps),
           textfield: withCustomStyles(components.textfield, fieldProps, labelProps, wrapperProps),
           select: withCustomStyles(components.select, fieldProps, labelProps, wrapperProps),
+          webform_multiple: withCustomStyles(components.webform_multiple, {}, { className: classNames(['block', 'text-gray-700', 'text-sm', 'font-bold'])}, wrapperProps),
           checkbox: withCustomStyles(components.checkbox, {}, { className: classNames(['mx-2', 'mt-0.5']) }, { className: classNames(['my-2'])}),
           webform_autocomplete: withCustomStyles(components.webform_autocomplete, fieldProps, labelProps, wrapperProps),
           textarea: withCustomStyles(components.textarea, fieldProps, labelProps, wrapperProps),
