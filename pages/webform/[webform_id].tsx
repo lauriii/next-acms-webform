@@ -30,6 +30,7 @@ export default function WebformSlug({ menus, webform, id }) {
         <Webform id={id} data={webform} customComponents={{
           textfield: withCustomStyles(components.textfield, fieldProps, labelProps, wrapperProps),
           select: withCustomStyles(components.select, fieldProps, labelProps, wrapperProps),
+          checkbox: withCustomStyles(components.checkbox, {}, { className: classNames(['mx-2', 'mt-0.5']) }, { className: classNames(['my-2'])}),
           webform_autocomplete: withCustomStyles(components.webform_autocomplete, fieldProps, labelProps, wrapperProps),
           textarea: withCustomStyles(components.textarea, fieldProps, labelProps, wrapperProps),
           webform_actions: withCustomStyles(components.webform_actions, { className: classNames('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded')}),
