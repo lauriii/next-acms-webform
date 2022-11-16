@@ -35,8 +35,10 @@ export default function WebformSlug({ menus, webform, id }) {
           checkbox: withCustomStyles(components.checkbox, {}, { className: classNames(['mx-2', 'mt-0.5']) }, { className: classNames(['my-2'])}),
           webform_autocomplete: withCustomStyles(components.webform_autocomplete, fieldProps, labelProps, wrapperProps),
           textarea: withCustomStyles(components.textarea, fieldProps, labelProps, wrapperProps),
-          webform_actions: withCustomStyles(components.webform_actions, { className: classNames('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded')}),
+          webform_actions: withCustomStyles(components.webform_actions, { className: classNames('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4')}),
           button: withCustomStyles(components.button, {className: classNames('mt-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow')}),
+          webform_table: withCustomStyles(components.webform_table, { className: classNames('w-full', 'text-sm', 'text-left', 'text-gray-500', 'dark:text-gray-400') }, labelProps, wrapperProps),
+          email: withCustomStyles(components.email, fieldProps, labelProps, wrapperProps),
         }} />
       </div>
     </Layout>
