@@ -4,12 +4,12 @@ import {
   resolveWebformContent,
   Webform
 } from 'nextjs-drupal-webform';
-import { drupal } from '../../lib/drupal';
-import { GetStaticPathsContext } from 'next/types';
-import { GetStaticPathsResult } from 'next';
-import { Layout } from '../../components/layout';
-import { getMenus } from '../../lib/get-menus';
-import { PageHeader } from '../../components/page-header';
+import {drupal} from '../../lib/drupal';
+import {GetStaticPathsContext} from 'next/types';
+import {GetStaticPathsResult} from 'next';
+import {Layout} from '../../components/layout';
+import {getMenus} from '../../lib/get-menus';
+import {PageHeader} from '../../components/page-header';
 import withCustomStyles from "../../components/webform/withCustomStyles";
 import classNames from "classnames";
 import WebformTable from "../../components/webform/WebformTable";
@@ -23,24 +23,29 @@ const fieldProps = {
 const wrapperProps = {
   className: classNames(['space-y-3']),
 };
-export default function WebformSlug({ menus, webform, id }) {
+export default function WebformSlug({menus, webform, id}) {
   return (
     <Layout title={webform.title} menus={menus}>
-      <PageHeader heading={webform.title} />
+      <PageHeader heading={webform.title}/>
       <div className="container px-6 pb-10 mx-auto">
         <Webform id={id} data={webform} customComponents={{
           autocomplete: withCustomStyles(components.autocomplete, fieldProps, labelProps, wrapperProps),
           textfield: withCustomStyles(components.textfield, fieldProps, labelProps, wrapperProps),
           select: withCustomStyles(components.select, fieldProps, labelProps, wrapperProps),
-          webform_multiple: withCustomStyles(components.webform_multiple, {}, { className: classNames(['block', 'text-gray-700', 'text-sm', 'font-bold'])}, wrapperProps),
-          checkbox: withCustomStyles(components.checkbox, {}, { className: classNames(['mx-2', 'mt-0.5']) }, { className: classNames(['my-2'])}),
+          webform_multiple: withCustomStyles(components.webform_multiple, {}, {className: classNames(['block', 'text-gray-700', 'text-sm', 'font-bold'])}, wrapperProps),
+          checkbox: withCustomStyles(components.checkbox, {}, {className: classNames(['mx-2', 'mt-0.5'])}, {className: classNames(['my-2'])}),
+          radio: withCustomStyles(components.checkbox, {}, {className: classNames(['mx-2', 'mt-0.5'])}, {className: classNames(['my-2'])}),
           webform_autocomplete: withCustomStyles(components.webform_autocomplete, fieldProps, labelProps, wrapperProps),
           textarea: withCustomStyles(components.textarea, fieldProps, labelProps, wrapperProps),
-          webform_actions: withCustomStyles(components.webform_actions, { className: classNames('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4')}),
+          webform_actions: withCustomStyles(components.webform_actions, {className: classNames('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4')}),
           button: withCustomStyles(components.button, {className: classNames('mt-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow')}),
-          webform_table: withCustomStyles(WebformTable, { className: classNames('w-full', 'text-sm', 'text-left', 'text-gray-500', 'dark:text-gray-400') }, labelProps, wrapperProps),
+          webform_table: withCustomStyles(WebformTable, {className: classNames('w-full', 'text-sm', 'text-left', 'text-gray-500', 'dark:text-gray-400')}, labelProps, wrapperProps),
           email: withCustomStyles(components.email, fieldProps, labelProps, wrapperProps),
-        }} />
+          checkboxes: withCustomStyles(components.checkboxes, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300')}, labelProps, {className: classNames(['my-2'])}),
+          radios: withCustomStyles(components.radios, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500')}, labelProps, {className: classNames(['my-2'])}),
+          webform_radios_other: withCustomStyles(components.radios, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500')}, labelProps, {className: classNames(['my-2'])}),
+          webform_checkboxes_other: withCustomStyles(components.checkboxes, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300')}, labelProps, {className: classNames(['my-2'])}),
+        }}/>
       </div>
     </Layout>
   );
@@ -51,7 +56,7 @@ export async function getStaticPaths(
 ): Promise<GetStaticPathsResult> {
   const entities = await drupal.getResourceCollectionFromContext('webform--webform', context);
   const paths = entities.map((entity) => {
-    return { params: { webform_id: entity.drupal_internal__id }}
+    return {params: {webform_id: entity.drupal_internal__id}}
   });
   return {
     paths: [...paths],
