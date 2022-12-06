@@ -23,6 +23,11 @@ const fieldProps = {
 const wrapperProps = {
   className: classNames(['space-y-3']),
 };
+
+const fieldPropsCheckboxes = {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300')}
+const fieldPropsRadios = {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500')}
+const wrapperPropsCheckbox = {className: classNames(['my-2'])}
+
 export default function WebformSlug({menus, webform, id}) {
   return (
     <Layout title={webform.title} menus={menus}>
@@ -41,10 +46,15 @@ export default function WebformSlug({menus, webform, id}) {
           button: withCustomStyles(components.button, {className: classNames('mt-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow')}),
           webform_table: withCustomStyles(WebformTable, {className: classNames('w-full', 'text-sm', 'text-left', 'text-gray-500', 'dark:text-gray-400')}, labelProps, wrapperProps),
           email: withCustomStyles(components.email, fieldProps, labelProps, wrapperProps),
-          checkboxes: withCustomStyles(components.checkboxes, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300')}, labelProps, {className: classNames(['my-2'])}),
-          radios: withCustomStyles(components.radios, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500')}, labelProps, {className: classNames(['my-2'])}),
-          webform_radios_other: withCustomStyles(components.radios, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500')}, labelProps, {className: classNames(['my-2'])}),
-          webform_checkboxes_other: withCustomStyles(components.checkboxes, {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300')}, labelProps, {className: classNames(['my-2'])}),
+          checkboxes: withCustomStyles(components.checkboxes, fieldPropsCheckboxes, labelProps, wrapperPropsCheckbox),
+          radios: withCustomStyles(components.radios, fieldPropsRadios, labelProps, wrapperPropsCheckbox),
+          webform_radios_other: withCustomStyles(components.radios, fieldPropsRadios, labelProps, wrapperPropsCheckbox),
+          webform_checkboxes_other: withCustomStyles(components.checkboxes, fieldPropsCheckboxes, labelProps, wrapperPropsCheckbox),
+          search: withCustomStyles(components.search, fieldProps, labelProps, wrapperProps),
+          webform_select_other: withCustomStyles(components.webform_select_other, fieldProps, labelProps, wrapperProps),
+          value: withCustomStyles(components.value, fieldProps, labelProps, wrapperProps),
+          webform_entity_checkboxes: withCustomStyles(components.checkboxes, fieldPropsCheckboxes, labelProps, wrapperPropsCheckbox),
+          webform_entity_radios: withCustomStyles(components.radios, fieldPropsRadios, labelProps, wrapperPropsCheckbox),
         }}/>
       </div>
     </Layout>
