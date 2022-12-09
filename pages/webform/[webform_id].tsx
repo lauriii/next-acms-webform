@@ -53,8 +53,13 @@ export default function WebformSlug({menus, webform, id}) {
           search: withCustomStyles(components.search, fieldProps, labelProps, wrapperProps),
           webform_select_other: withCustomStyles(components.webform_select_other, fieldProps, labelProps, wrapperProps),
           value: withCustomStyles(components.value, fieldProps, labelProps, wrapperProps),
-          webform_entity_checkboxes: withCustomStyles(components.checkboxes, fieldPropsCheckboxes, labelProps, wrapperPropsCheckbox),
-          webform_entity_radios: withCustomStyles(components.radios, fieldPropsRadios, labelProps, wrapperPropsCheckbox),
+          tel: withCustomStyles(components.textfield, fieldProps, labelProps, wrapperProps),
+          range: withCustomStyles(components.range, {className: classNames('w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-700')}, labelProps, wrapperProps),
+          webform_terms_of_service: withCustomStyles(components.webform_terms_of_service, fieldPropsCheckboxes, {className: classNames(['mx-2', 'mt-0.5'])}, {className: classNames(['my-2'])}),
+          datelist: withCustomStyles(components.datelist, {className: classNames('block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer')}),
+          date: withCustomStyles(components.date, fieldProps, labelProps, wrapperProps),
+          webform_time: withCustomStyles(components.webform_time, fieldProps, labelProps, wrapperProps),
+          datetime: withCustomStyles(components.datetime, fieldProps, labelProps, wrapperProps),
         }}/>
       </div>
     </Layout>
