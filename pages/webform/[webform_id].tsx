@@ -13,6 +13,7 @@ import {PageHeader} from '../../components/page-header';
 import withCustomStyles from "../../components/webform/withCustomStyles";
 import classNames from "classnames";
 import WebformTable from "../../components/webform/WebformTable";
+import WebformButton from "../../components/webform/WebformButton";
 
 const labelProps = {
   className: classNames(['block', 'text-gray-700', 'text-sm', 'font-bold', 'mb-2']),
@@ -42,8 +43,8 @@ export default function WebformSlug({menus, webform, id}) {
           radio: withCustomStyles(components.checkbox, {}, {className: classNames(['mx-2', 'mt-0.5'])}, {className: classNames(['my-2'])}),
           webform_autocomplete: withCustomStyles(components.webform_autocomplete, fieldProps, labelProps, wrapperProps),
           textarea: withCustomStyles(components.textarea, fieldProps, labelProps, wrapperProps),
-          webform_actions: withCustomStyles(components.webform_actions, {className: classNames('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4')}),
-          button: withCustomStyles(components.button, {className: classNames('mt-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow')}),
+          webform_actions: withCustomStyles(components.webform_actions, {}, {}, {className: classNames('my-4', 'space-x-4')}),
+          button: withCustomStyles(WebformButton, {className: classNames('mt-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow')}),
           webform_table: withCustomStyles(WebformTable, {className: classNames('w-full', 'text-sm', 'text-left', 'text-gray-500', 'dark:text-gray-400')}, labelProps, wrapperProps),
           email: withCustomStyles(components.email, fieldProps, labelProps, wrapperProps),
           checkboxes: withCustomStyles(components.checkboxes, fieldPropsCheckboxes, labelProps, wrapperPropsCheckbox),
