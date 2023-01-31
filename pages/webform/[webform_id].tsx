@@ -25,6 +25,16 @@ const wrapperProps = {
   className: classNames(['space-y-3']),
 };
 
+const tableProps = {
+  className: classNames(['iamtable'])
+}
+const trProps = {
+  className: classNames(['mr-6'])
+}
+const tdProps = {
+  className: classNames(['pr-6'])
+}
+
 const fieldPropsCheckboxes = {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300')}
 const fieldPropsRadios = {className: classNames('w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500')}
 const wrapperPropsCheckbox = {className: classNames(['my-2'])}
@@ -38,7 +48,7 @@ export default function WebformSlug({menus, webform, id}) {
           autocomplete: withCustomStyles(components.autocomplete, fieldProps, labelProps, wrapperProps),
           textfield: withCustomStyles(components.textfield, fieldProps, labelProps, wrapperProps),
           select: withCustomStyles(components.select, fieldProps, labelProps, wrapperProps),
-          webform_multiple: withCustomStyles(components.webform_multiple, {}, {className: classNames(['block', 'text-gray-700', 'text-sm', 'font-bold'])}, wrapperProps),
+          webform_multiple: withCustomStyles(components.webform_multiple, {}, {className: classNames(['block', 'text-gray-700', 'text-sm', 'font-bold'])}, wrapperProps, tableProps, trProps, tdProps),
           checkbox: withCustomStyles(components.checkbox, {}, {className: classNames(['mx-2', 'mt-0.5'])}, {className: classNames(['my-2'])}),
           radio: withCustomStyles(components.checkbox, {}, {className: classNames(['mx-2', 'mt-0.5'])}, {className: classNames(['my-2'])}),
           webform_autocomplete: withCustomStyles(components.webform_autocomplete, fieldProps, labelProps, wrapperProps),

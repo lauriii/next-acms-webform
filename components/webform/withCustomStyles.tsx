@@ -1,4 +1,4 @@
-const withCustomStyles = (EnhancedComponent, fieldProps = {}, labelProps = {}, wrapperProps = {}) => {
+const withCustomStyles = (EnhancedComponent, fieldProps = {}, labelProps = {}, wrapperProps = {}, tableProps = {}, trProps = {}, tdProps = {}) => {
   return function WebformElementWithCustomStyles(props) {
     return (
       <EnhancedComponent
@@ -14,6 +14,18 @@ const withCustomStyles = (EnhancedComponent, fieldProps = {}, labelProps = {}, w
         wrapperProps={{
           ...(props.wrapperProps ?? {}),
           ...wrapperProps
+        }}
+        tableProps={{
+          ...(props.tableProps ?? {}),
+          ...tableProps,
+        }}
+        trProps={{
+          ...(props.trProps ?? {}),
+          ...trProps,
+        }}
+        tdProps={{
+          ...(props.tdProps ?? {}),
+          ...tdProps,
         }}
       />
     );
