@@ -26,10 +26,10 @@ const wrapperProps = {
 };
 
 const tableProps = {
-  className: classNames(['iamtable'])
+  className: classNames(['table-auto'])
 }
 const trProps = {
-  className: classNames(['mr-6'])
+  className: classNames(['space-y-1'])
 }
 const tdProps = {
   className: classNames(['pr-6'])
